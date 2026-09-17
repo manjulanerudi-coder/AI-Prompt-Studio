@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AI Prompt Studio</title>
+
+    <!-- Website Favicon -->
+    <link rel="icon" type="image/png" href="logo.png">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+    <div class="container">
+
+
+        <!-- HEADER -->
+        <div class="header">
+
+            <div class="logo">
+
+                <img
+                    src="logo.png"
+                    alt="AI Prompt Studio Logo">
+
+            </div>
+
+
+            <h1>
+                AI Prompt Studio
+            </h1>
+
+
+            <p>
+                Create beautiful and detailed AI image generation prompts
+            </p>
+
+        </div>
+
+
+
+        <!-- PROMPT GENERATOR -->
+        <div class="generator">
+
+
+            <!-- PROMPT TYPE -->
+            <div class="input-group">
+
+                <label>
+                    🎯 Prompt Type
+                </label>
+
+
+                <select id="promptType">
+
+                    <option>Character</option>
+
+                    <option>Fashion</option>
+
+                    <option>Food</option>
+
+                    <option>Couple</option>
+
+                    <option>Landscape</option>
+
+                    <option>Product</option>
+
+                    <option>Cinematic Scene</option>
+
+                </select>
+
+            </div>
+
+
+
+            <!-- CHARACTER -->
+            <div class="input-group">
+
+                <label>
+                    👤 Character
+                </label>
+
+
+                <select id="character">
+
+                    <option>
+                        Beautiful young woman
+                    </option>
+
+                    <option>
+                        Handsome young man
+                    </option>
+
+                    <option>
+                        Young couple
+                    </option>
+
+                    <option>
+                        Cute child
+                    </option>
+
+                    <option>
+                        Elegant elderly woman
+                    </option>
+
+                </select>
+
+            </div>
+
+
+
+            <!-- OUTFIT -->
+            <div class="input-group">
+
+                <label>
+                    👗 Outfit
+                </label>
+
+
+                <select id="outfit">
+
+                    <option>
+                        Elegant traditional saree
+                    </option>
+
+                    <option>
+                        Modern casual outfit
+                    </option>
+
+                    <option>
+                        Beautiful ethnic dress
+                    </option>
+
+                    <option>
+                        Stylish western outfit
+                    </option>
+
+                    <option>
+                        Professional formal outfit
+                    </option>
+
+                </select>
+
+            </div>
+
+
+
+            <!-- ENVIRONMENT -->
+            <div class="input-group">
+
+                <label>
+                    🌍 Environment
+                </label>
+
+
+                <select id="environment">
+
+                    <option>
+                        Peaceful Indian village
+                    </option>
+
+                    <option>
+                        Modern city
+                    </option>
+
+                    <option>
+                        Beautiful beach
+                    </option>
+
+                    <option>
+                        Green forest
+                    </option>
+
+                    <option>
+                        Cozy café
+                    </option>
+
+                    <option>
+                        Luxury bedroom
+                    </option>
+
+                </select>
+
+            </div>
+
+
+
+            <!-- IMAGE STYLE -->
+            <div class="input-group">
+
+                <label>
+                    🎨 Image Style
+                </label>
+
+
+                <select id="style">
+
+                    <option>
+                        Cinematic realistic
+                    </option>
+
+                    <option>
+                        3D animated movie style
+                    </option>
+
+                    <option>
+                        Ultra realistic photography
+                    </option>
+
+                    <option>
+                        Fantasy cinematic style
+                    </option>
+
+                    <option>
+                        Luxury commercial photography
+                    </option>
+
+                </select>
+
+            </div>
+
+
+
+            <!-- LIGHTING -->
+            <div class="input-group">
+
+                <label>
+                    💡 Lighting
+                </label>
+
+
+                <select id="lighting">
+
+                    <option>
+                        Soft natural lighting
+                    </option>
+
+                    <option>
+                        Warm golden hour lighting
+                    </option>
+
+                    <option>
+                        Professional studio lighting
+                    </option>
+
+                    <option>
+                        Beautiful moonlight
+                    </option>
+
+                    <option>
+                        Colorful neon lighting
+                    </option>
+
+                </select>
+
+            </div>
+
+
+
+            <!-- CAMERA -->
+            <div class="input-group">
+
+                <label>
+                    📷 Camera Angle
+                </label>
+
+
+                <select id="camera">
+
+                    <option>
+                        Beautiful close-up shot
+                    </option>
+
+                    <option>
+                        Medium shot
+                    </option>
+
+                    <option>
+                        Wide cinematic shot
+                    </option>
+
+                    <option>
+                        Low angle shot
+                    </option>
+
+                    <option>
+                        Top-down view
+                    </option>
+
+                </select>
+
+            </div>
+
+
+
+            <!-- MOOD -->
+            <div class="input-group">
+
+                <label>
+                    ✨ Mood
+                </label>
+
+
+                <select id="mood">
+
+                    <option>
+                        Happy and cheerful
+                    </option>
+
+                    <option>
+                        Romantic and emotional
+                    </option>
+
+                    <option>
+                        Peaceful and relaxing
+                    </option>
+
+                    <option>
+                        Dreamy and magical
+                    </option>
+
+                    <option>
+                        Dramatic and powerful
+                    </option>
+
+                </select>
+
+            </div>
+
+
+
+            <!-- CUSTOM DESCRIPTION -->
+            <div class="input-group">
+
+                <label>
+                    📝 Describe Your Idea
+                </label>
+
+
+                <textarea
+                    id="description"
+                    rows="5"
+                    placeholder="Example: A beautiful girl enjoying hot coffee while sitting outside a village house during gentle rain...">
+                </textarea>
+
+            </div>
+
+
+
+            <!-- GENERATE BUTTON -->
+            <button
+                class="generate-btn"
+                onclick="generatePrompt()">
+
+                ✨ Generate Prompt
+
+            </button>
+
+
+
+            <!-- RESULT -->
+            <div class="result-box">
+
+                <h2>
+                    📝 Your Generated Prompt
+                </h2>
+
+
+                <p id="result">
+
+                    Your generated prompt will appear here.
+
+                </p>
+
+
+                <!-- COPY BUTTON -->
+                <button
+                    class="copy-btn"
+                    onclick="copyPrompt()">
+
+                    📋 Copy Prompt
+
+                </button>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- FOOTER -->
+        <div class="footer">
+
+            <p>
+                AI Prompt Studio • Create. Imagine. Generate. ✨
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- JAVASCRIPT -->
+    <script>
+
+
+        function generatePrompt() {
+
+
+            let promptType =
+                document.getElementById("promptType").value;
+
+
+            let character =
+                document.getElementById("character").value;
+
+
+            let outfit =
+                document.getElementById("outfit").value;
+
+
+            let environment =
+                document.getElementById("environment").value;
+
+
+            let style =
+                document.getElementById("style").value;
+
+
+            let lighting =
+                document.getElementById("lighting").value;
+
+
+            let camera =
+                document.getElementById("camera").value;
+
+
+            let mood =
+                document.getElementById("mood").value;
+
+
+            let description =
+                document.getElementById("description").value.trim();
+
+
+
+            let prompt =
+
+                "Create a high-quality " +
+
+                promptType +
+
+                " image featuring " +
+
+                character +
+
+                " wearing " +
+
+                outfit +
+
+                ", set in a " +
+
+                environment +
+
+                ". Use " +
+
+                style +
+
+                " with " +
+
+                lighting +
+
+                " and a " +
+
+                camera +
+
+                ". The overall mood should be " +
+
+                mood +
+
+                ". " +
+
+                (
+                    description
+                    ? "Scene description: " +
+                      description +
+                      ". "
+                    : ""
+                ) +
+
+                "Include highly detailed facial features, " +
+
+                "natural expressions, realistic textures, " +
+
+                "beautiful composition, cinematic depth, " +
+
+                "professional photography quality, " +
+
+                "high detail and visually stunning results.";
+
+
+
+            document.getElementById("result").innerText =
+                prompt;
+
+
+        }
+
+
+
+        function copyPrompt() {
+
+
+            let prompt =
+                document.getElementById("result").innerText;
+
+
+            navigator.clipboard.writeText(prompt);
+
+
+            alert(
+                "Prompt copied successfully! 📋"
+            );
+
+
+        }
+
+
+    </script>
+
+
+</body>
+
+</html>
